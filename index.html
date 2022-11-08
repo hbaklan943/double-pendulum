@@ -11,8 +11,8 @@
 <body style="background-color: #1f1f1d;">
 
     <div class="slidecontainer">
-        <label class="label" for="m1Range" id="m1Label">Mass 1: 5Kg</label>
-        <input type="range" min="1" max="18" value="5" class="slider" id="m1Range">
+        <label class="label" for="m1Range" id="m1Label">Mass 1: 8Kg</label>
+        <input type="range" min="1" max="18" value="8" class="slider" id="m1Range">
         <label class="label" for="m2Range" id="m2Label">Mass 2: 5Kg </label>
         <input type="range" min="1" max="18" value="5" class="slider" id="m2Range">
         <label class="label" for="r1Range" id="r1Label">Length 1: 1m</label>
@@ -21,6 +21,11 @@
         <input type="range" min="1" max="18" value="10" class="slider" id="r2Range">
         <label class="label" for="gRange" id="gLabel">Gravity: 9.8m/s<sup>2</sup></label>
         <input type="range" min="1" max="250" value="98" class="slider" id="gRange">
+        <label class="label" for="switch-div">Trail</label>
+        <div id="switch-div">
+            <input type="checkbox" id="switch" />
+            <label id='switch-label' for="switch"></label>
+        </div>
     </div>
 
     <script src="./p5.min.js"></script>
@@ -88,6 +93,60 @@
         font-size: 20px;
         margin-left: 5%;
         margin-right: 5%;
+    }
+
+    input[type=checkbox] {
+        height: 0;
+        width: 0;
+        visibility: hidden;
+    }
+
+    #switch-label {
+        cursor: pointer;
+        width: 50px;
+        height: 26px;
+        background: grey;
+        display: block;
+        border-radius: 25px;
+        position: relative;
+    }
+
+    #switch-label:after {
+        content: '';
+        position: absolute;
+        top: 1px;
+        left: 2px;
+        width: 22px;
+        height: 23px;
+        background: #fff;
+        border-radius: 22px;
+        transition: 0.3s;
+    }
+
+    input:checked+#switch-label {
+        background: #1b3a4b;
+    }
+
+    input:checked+#switch-label:after {
+        left: calc(100% - 2px);
+        transform: translateX(-100%);
+    }
+
+    #switch-label:active:after {
+        width: 36px;
+    }
+
+    #switch-div {
+        position: absolute;
+        padding-top: 0%;
+        margin-top: 0%;
+        margin-left: 3%;
+    }
+
+
+
+    label#switch-label {
+        display: inline-block;
     }
 </style>
 

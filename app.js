@@ -1,4 +1,4 @@
-
+let poses = [];
 
 let a1 = Math.PI * 0.6;
 let a2 = 0;
@@ -45,7 +45,19 @@ function draw() {
     a1 += a1_vel;
     a2 += a2_vel;
 
+    if (!trailSwitchValue) {
+        poses = [];
+    }
+    // Add current position to locs array
+    poses.push({ x: x2, y: y2 });
 
+    // Remove the oldest mouse location after 50 frames
+    if (poses.length > 1000) poses.shift();
+
+    for (let p = 0; p < poses.length; p++) {
+        let pos = poses[p];
+        ellipse(pos.x, pos.y, m2 * 0.5, m2 * 0.5);
+    }
 }
 
 function windowResized() {

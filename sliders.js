@@ -3,11 +3,13 @@ let m2Slider = document.getElementById("m2Range");
 let r1Slider = document.getElementById("r1Range");
 let r2Slider = document.getElementById("r2Range");
 let gSlider = document.getElementById("gRange");
-let m1SliderValue = 5;
+let trailSwitch = document.getElementById("switch");
+let m1SliderValue = 8;
 let m2SliderValue = 5;
 let r1SliderValue = 1;
 let r2SliderValue = 1;
 let gSliderValue = 9.8;
+let trailSwitchValue = false;
 
 m1Slider.oninput = function () {
     m1SliderValue = Number(m1Slider.value);
@@ -28,4 +30,8 @@ r2Slider.oninput = function () {
 gSlider.oninput = function () {
     gSliderValue = Number(gSlider.value) / 10;
     document.getElementById('gLabel').innerHTML = `Gravity: ${gSliderValue}m/s<sup>2</sup>`;
+}
+trailSwitch.oninput = function () {
+    trailSwitchValue = trailSwitch.checked;
+    console.log(trailSwitchValue);
 }
