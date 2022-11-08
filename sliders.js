@@ -19,11 +19,11 @@ m2Slider.oninput = function () {
 }
 r1Slider.oninput = function () {
     r1SliderValue = Number(r1Slider.value) / 10;
-    document.getElementById('r1Label').innerHTML = `Length 1: ${r1SliderValue}Kg`;
+    document.getElementById('r1Label').innerHTML = `Length 1: ${r1SliderValue}m`;
 }
 r2Slider.oninput = function () {
     r2SliderValue = Number(r2Slider.value) / 10;
-    document.getElementById('r2Label').innerHTML = `Length 1: ${r2SliderValue}Kg`;
+    document.getElementById('r2Label').innerHTML = `Length 2: ${r2SliderValue}m`;
 }
 gSlider.oninput = function () {
     gSliderValue = Number(gSlider.value) / 10;
