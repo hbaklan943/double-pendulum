@@ -8,18 +8,86 @@
     <title>Document</title>
 </head>
 
-<body style="background-color: #000000;">
+<body style="background-color: #1f1f1d;">
+
+    <div class="slidecontainer">
+        <label class="label" for="m1Range" id="m1Label">Mass 1: 5Kg</label>
+        <input type="range" min="1" max="18" value="5" class="slider" id="m1Range">
+        <label class="label" for="m2Range" id="m2Label">Mass 2: 5Kg </label>
+        <input type="range" min="1" max="18" value="5" class="slider" id="m2Range">
+        <label class="label" for="r1Range" id="r1Label">Length 1: 1m</label>
+        <input type="range" min="1" max="18" value="10" class="slider" id="r1Range">
+        <label class="label" for="r2Range" id="r2Label">Length 2: 1m</label>
+        <input type="range" min="1" max="18" value="10" class="slider" id="r2Range">
+        <label class="label" for="gRange" id="gLabel">Gravity: 9.8m/s<sup>2</sup></label>
+        <input type="range" min="1" max="250" value="98" class="slider" id="gRange">
+    </div>
+
     <script src="./p5.min.js"></script>
+    <script src="./sliders.js"></script>
     <script src="./app.js"></script>
 </body>
 
 <style>
     html,
     body {
-        margin: 0;
+        margin-left: 0%;
+        margin-right: 0%;
+        margin-top: 0%;
+        margin-bottom: 5%;
         height: 100%;
         overflow: hidden;
-        overscroll-behavior: none;
+    }
+
+    .slidecontainer {
+        margin-top: 5%;
+        position: absolute;
+        padding-top: 55vh;
+        margin-right: 5%;
+        padding-right: 5%;
+    }
+
+    .slider {
+        -webkit-appearance: none;
+        appearance: none;
+        height: 18px !important;
+        width: 100%;
+        border-radius: 10em;
+        background-color: #1b3a4b;
+        outline: none;
+        margin-bottom: 14px;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #1b3a4b;
+        cursor: pointer;
+        border: 3px solid #a1a1a1;
+    }
+
+
+    .slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: #1b3a4b;
+        cursor: pointer;
+        border: 3px solid #f0efec;
+    }
+
+    .label {
+        color: #a1a1a1;
+        font-family: "Lucida Console", "Courier New", monospace;
+        letter-spacing: 1.5px;
+        font-size: 20px;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 </style>
 
