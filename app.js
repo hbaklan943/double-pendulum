@@ -36,7 +36,7 @@ function draw() {
     line(x1, y1, x2, y2);
 
     noStroke();
-    fill('#d03c13');
+    fill('#13d03c');
     ellipse(x1, y1, m1 * 5, m1 * 5);
     ellipse(x2, y2, m2 * 5, m2 * 5);
 
